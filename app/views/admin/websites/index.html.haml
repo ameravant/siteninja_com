@@ -1,10 +1,10 @@
-%table
+%table.full-width
   %tr
     %th Website
     %th First Deployed
     %th Last Deployed
   - for website in @websites
     %tr
-      %td= website.domain
-      %td= website.first_deployed unless website.first_deployed.blank?
-      %td= website.last_deployed
+      %td= link_to(website.domain, "http://" + website.domain)
+      %td= website.first_deployed.strftime("%b %d, %Y at %I:%M %p") unless website.first_deployed.blank?
+      %td= website.last_deployed.strftime("%b %d, %Y at %I:%M %p")
