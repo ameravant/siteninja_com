@@ -1,0 +1,10 @@
+%table
+  %tr
+    %th Website
+    %th First Deployed
+    %th Last Deployed
+  - for website in @websites
+    %tr
+      %td= website.domain
+      %td= website.first_deployed unless website.first_deployed.blank?
+      %td= website.last_deployed
